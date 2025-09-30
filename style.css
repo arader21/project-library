@@ -1,0 +1,16 @@
+body {
+    display:grid;
+    justify-items: center;
+}
+.screen {
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    display: grid;
+    justify-items: center;
+    gap: 1em;
+}
+button {
+    width: 8vw;
+    height: 4vh;
+}
