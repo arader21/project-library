@@ -28,6 +28,14 @@ newBookbtn.addEventListener("click", function() {
 })
 
 document.querySelector("#new-book-form").addEventListener("submit", function(event) {
+    let title = document.querySelector("#title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    let read = document.getElementById("read").checked;
+    let newBooks = ((title) + ("/") + (author) + ("/") + (pages) + ("/") + (read))
+    const newDiv = document.createElement("div");
+   newDiv.innerHTML = (newBooks);
+   document.body.appendChild(newDiv);
     event.preventDefault();
     addBookToLibrary(); 
 })
@@ -37,15 +45,6 @@ document.querySelector("#close-btn").addEventListener("click", function() {
     pages.value = "";
     read.checked = false;
 })
-document.querySelector("#display-btn").addEventListener("click", function() {
-    let title = document.querySelector("#title").value;
-    let author = document.getElementById("author").value;
-    let pages = document.getElementById("pages").value;
-    let read = document.getElementById("read").checked;
-    let newBooks = ((title) + ("/") + (author) + ("/") + (pages) + ("/") + (read))
-    const newDiv = document.createElement("div");
-   newDiv.innerHTML = (newBooks);
-   document.body.appendChild(newDiv);
-})
+
 
 
