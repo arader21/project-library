@@ -23,11 +23,29 @@ function addBookToLibrary() {
 let newBookbtn =document.querySelector("#new-book-btn");
 newBookbtn.addEventListener("click", function() {
     let newBookForm = document.querySelector("#new-book-form");
-    newBookForm.style.display = "block";
+    newBookForm.style.display = "grid";
+    newBookForm.style.gap = "1em";
 })
 
 document.querySelector("#new-book-form").addEventListener("submit", function(event) {
     event.preventDefault();
-    addBookToLibrary();
+    addBookToLibrary(); 
 })
+document.querySelector("#close-btn").addEventListener("click", function() {
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    read.checked = false;
+})
+document.querySelector("#display-btn").addEventListener("click", function() {
+    let title = document.querySelector("#title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    let read = document.getElementById("read").checked;
+    let newBooks = ((title) + ("/") + (author) + ("/") + (pages) + ("/") + (read))
+    const newDiv = document.createElement("div");
+   newDiv.innerHTML = (newBooks);
+   document.body.appendChild(newDiv);
+})
+
 
